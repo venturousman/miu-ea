@@ -1,0 +1,28 @@
+- We have finished all the exercises
+- Our group encourages each person should practice all the exercises individually first. It's good for everyone understand what we learned. We discussed together to find the solution for issues that we encountered. 
+
+- This is the first time I implement a Java project with VS Code. I installed an Extension Pack for Java and could run the project on VS code. While Son was using Intellj.
+
+- When followed the guideline pdf file, we got the missing packages errors or wrong base-package name in xml files.
+
+And we helped each other to complete everything.
+
+
+=====================================
+
+- We have finished all the exercises
+- Our group encourages each person should practice all the exercises individually first. It's good for everyone understand what we learned. We discussed together to find the solution for issues that we encountered. 
+
+- Create Config.java file as the exercise 1 above.
+- For part A, just use @Service annotation in ProductService
+- For part B, just use @Autowired annotation before setInventoryService setter function
+
+And we helped each other to complete everything.
+
+==========================================
+
+- For part A, create Config.java file with a @Bean List<IBookSupplier> suppliers
+   + Add @Autowired & @Service to BookService.
+   + Remove initialization code in the BookService constructor.
+   + Update code in App.java file to get bookService bean from Spring.
+- For part B, just add Borders class implements IBookSupplier and "new Borders()" in Config.java file.
