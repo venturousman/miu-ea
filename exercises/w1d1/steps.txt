@@ -1,0 +1,27 @@
+Yes, it does.
+- downloaded and extracted maven to C:\apache-maven
+- added C:\apache-maven\bin to my system variables PATH
+- installed mysql.
+- created the 'cs544' database with MySQL Command Line Client & double checked with MySQL Workbench
+- downloaded and extracted the exercise 1 to D:\MIU\1my studies\4-ea\labs\lab1\W1D1-Course_Overview_1
+- went to src/main/resources/application.properties and changed the database password.
+- opened cmd in the exercise 1 folder and typed "mvn spring-boot:run"
+- got errors about phone and email tables but still worked
+- could access http://localhost:8080 and logged in with username and password.
+- could add a test contact then retrieved again via using SQL SELECT command in MySQL Command Line Client
+- shutdown by CTRL-C
+
+
+
+Yes, it does.
+- downloaded and extracted tomcat to C:\apache-tomcat
+- set JAVA_HOME = C:\Program Files\Java\jdk-22 to my system variables PATH
+- downloaded and extracted the exercise 2 to D:\MIU\1my studies\4-ea\labs\lab1\W1D1-Course_Overview_2
+- went to src\main\java\cs544\cov2\config\Config.java and changed the database password.
+- opened cmd in the exercise 2 folder and typed "mvn package"
+- opened D:\MIU\1my studies\4-ea\labs\lab1\W1D1-Course_Overview_2\target folder and changed the ..SNAPSHOT.war file name to COV2.war
+- opened C:\apache-tomcat\bin\startup.bat (or via cmd in C:\apache-tomcat\bin folder)
+- opened http://localhost:8080 - showed the tomcat page.
+- copied COV2.war file to C:\apache-tomcat\webapps folder.
+- opened http://localhost:8080/COV2/ and logged in with the username and password (admin)
+- shutdown the server by opening C:\apache-tomcat\bin\shutdown.bat
