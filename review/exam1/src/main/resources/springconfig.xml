@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+     http://www.springframework.org/schema/beans 
+     http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="classA" class="cs544.ClassA" init-method="init" destroy-method="destroy" scope="prototype">
+        <constructor-arg value="Hello" />
+        <property name="classB" ref="classB" />
+    </bean>
+
+    <bean id="classB" class="cs544.ClassB" init-method="init" destroy-method="destroy" lazy-init="true">
+        <property name="text" value="World" />
+    </bean>
+
+    <bean id="classC" class="cs544.ClassC" />
+</beans>

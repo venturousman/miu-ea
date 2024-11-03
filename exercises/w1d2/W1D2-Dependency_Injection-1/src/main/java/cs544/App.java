@@ -6,9 +6,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     public static void main(String[] args) {
-        // System.out.println("FIXME: Empty Project");
         // var context = new AnnotationConfigApplicationContext(Config.class);
-        var context = new ClassPathXmlApplicationContext("springconfig.xml");
+        // output: Hello World
+        var context = new ClassPathXmlApplicationContext("springconfig.xml"); // output: Hello World from XML
         Greeting greeting = context.getBean("greeting", Greeting.class);
         greeting.sayHello();
         context.close();
