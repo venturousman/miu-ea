@@ -1,10 +1,10 @@
 package cs544;
 
-import jakarta.persistence.DiscriminatorValue;
+// import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
 @Entity
-@DiscriminatorValue("book")
+// @DiscriminatorValue("book")
 public class Book extends Product {
     private String title;
 

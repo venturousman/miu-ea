@@ -10,8 +10,10 @@ import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "product_type", discriminatorType = DiscriminatorType.STRING)
+// @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+// @DiscriminatorColumn(name = "product_type", discriminatorType =
+// DiscriminatorType.STRING)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
