@@ -14,9 +14,14 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
 
 @Entity
+@NamedQueries({
+		@NamedQuery(name = "Owner.Everybody", query = "from Owner")
+})
 public class Owner {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

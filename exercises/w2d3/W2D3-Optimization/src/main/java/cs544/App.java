@@ -23,7 +23,8 @@ public class App {
         EntityGraph<Owner> graph = em.createEntityGraph(Owner.class);
         graph.addSubgraph("pets");
 
-        TypedQuery<Owner> query = em.createQuery("from Owner", Owner.class);
+        TypedQuery<Owner> query = em.createNamedQuery("Owner.Everybody", Owner.class);
+        // TypedQuery<Owner> query = em.createQuery("from Owner", Owner.class);
         // TypedQuery<Owner> query = em.createQuery("from Owner o JOIN FETCH o.pets",
         // Owner.class);
 
