@@ -16,19 +16,18 @@ public class StudentsCourseServlet extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 
 		String studentIdStr = request.getParameter("studentid");
-		
+
 		long studentid = -1;
 		Student student = null;
-		
+
 		if (studentIdStr != null && studentIdStr.matches("\\d+")) {
 			studentid = Long.parseLong(studentIdStr);
 			StudentService studentService = new StudentService();
 			student = studentService.getStudent(studentid);
 		}
-		
-		request.setAttribute("student", student);
-		request.getRequestDispatcher("student.jsp").forward(request, response);		
 
+		request.setAttribute("student", student);
+		request.getRequestDispatcher("student.jsp").forward(request, response);
 	}
 
 }

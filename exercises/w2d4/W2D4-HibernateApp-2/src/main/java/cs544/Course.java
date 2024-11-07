@@ -1,6 +1,11 @@
 package cs544;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Course {
+	@Id
 	private long coursenumber;
 	private String name;
 	private String grade;

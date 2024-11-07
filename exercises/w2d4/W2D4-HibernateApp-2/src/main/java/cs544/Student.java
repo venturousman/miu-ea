@@ -3,11 +3,21 @@ package cs544;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Student {
+	@Id
 	private long studentid;
 	private String firstname;
 	private String lastname;
-	
+
+	@OneToMany(cascade = CascadeType.ALL)
+	// @JoinColumn(name = "studentid")
+	// cannot use JoinColumn coz insert data into middle table in import.sql
 	private Collection<Course> courselist = new ArrayList<Course>();
 
 	public Student() {
