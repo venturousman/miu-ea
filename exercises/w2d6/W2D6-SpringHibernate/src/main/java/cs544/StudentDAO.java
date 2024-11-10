@@ -1,14 +1,16 @@
 package cs544;
 
-// import java.util.ArrayList;
-// import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
-import jakarta.persistence.EntityGraph;
+// import java.util.HashMap;
+// import java.util.Map;
+
+// import jakarta.persistence.EntityGraph;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 
+@Transactional(propagation = Propagation.MANDATORY)
 public class StudentDAO {
 
 	@PersistenceContext

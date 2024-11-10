@@ -1,9 +1,12 @@
 package cs544;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 // import jakarta.persistence.EntityManager;
 
+@Transactional(propagation = Propagation.REQUIRES_NEW)
 public class StudentService {
 	@Autowired
 	private StudentDAO studentdao;
