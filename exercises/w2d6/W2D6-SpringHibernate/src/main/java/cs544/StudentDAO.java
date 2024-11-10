@@ -18,13 +18,14 @@ public class StudentDAO {
 	}
 
 	public Student load(long studentid) {
-		EntityGraph<Student> graph = em.createEntityGraph(Student.class);
-		graph.addSubgraph("courselist");
+		// EntityGraph<Student> graph = em.createEntityGraph(Student.class);
+		// graph.addSubgraph("courselist");
 
-		Map<String, Object> properties = new HashMap<>();
-		properties.put("javax.persistence.fetchgraph", graph);
+		// Map<String, Object> properties = new HashMap<>();
+		// properties.put("javax.persistence.fetchgraph", graph);
 
-		Student foundStudent = em.find(Student.class, studentid, properties);
+		// Student foundStudent = em.find(Student.class, studentid, properties);
+		Student foundStudent = em.find(Student.class, studentid);
 		return foundStudent;
 	}
 }

@@ -1,9 +1,11 @@
 package cs544;
 
+import org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter;
 import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
+import jakarta.servlet.FilterRegistration;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRegistration;
@@ -32,6 +34,9 @@ public class MyWebAppInitializer implements WebApplicationInitializer {
         // } else {
         // System.out.println("@@@ Test servlet registration returned null");
         // }
+
+        FilterRegistration.Dynamic openInView = container.addFilter("OpenInView", new OpenEntityManagerInViewFilter());
+        openInView.addMappingForUrlPatterns(null, true, "/*");
 
         ServletRegistration.Dynamic servlet = container.addServlet("StudentsCourseServlet",
                 new StudentsCourseServlet());
