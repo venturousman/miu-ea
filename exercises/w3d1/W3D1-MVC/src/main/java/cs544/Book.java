@@ -66,15 +66,50 @@ public class Book {
         this.price = price;
     }
 
-    // @Override
-    // public int hashCode() {
-    // // TODO Auto-generated method stub
-    // return super.hashCode();
-    // }
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        // int result = (id != null) ? id.hashCode() : 0;
+        result = prime * result + ((title == null) ? 0 : title.hashCode());
+        result = prime * result + ((ISBN == null) ? 0 : ISBN.hashCode());
+        result = prime * result + ((author == null) ? 0 : author.hashCode());
+        result = prime * result + Double.hashCode(price);
+        return result;
+    }
 
-    // @Override
-    // public boolean equals(Object obj) {
-    // // TODO Auto-generated method stub
-    // return super.equals(obj);
-    // }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+
+        Book other = (Book) obj;
+
+        if (title == null) {
+            if (other.title != null)
+                return false;
+        } else if (!title.equals(other.title))
+            return false;
+
+        if (ISBN == null) {
+            if (other.ISBN != null)
+                return false;
+        } else if (!ISBN.equals(other.ISBN))
+            return false;
+
+        if (author == null) {
+            if (other.author != null)
+                return false;
+        } else if (!author.equals(other.author))
+            return false;
+
+        if (price != other.price)
+            return false;
+
+        return true;
+    }
 }
