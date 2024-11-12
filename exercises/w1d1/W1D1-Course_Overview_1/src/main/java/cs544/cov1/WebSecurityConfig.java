@@ -28,21 +28,20 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.formLogin(form -> form
-                        .loginPage("/login")
-                        .loginProcessingUrl("/login")
-                        .defaultSuccessUrl("/contact")
-                        .permitAll()
-        )
+                .loginPage("/login")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/contact")
+                .permitAll())
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/", "/WEB-INF/views/index.jsp", "/login", "/logout", "/accessDenied", "/WEB-INF/views/login.jsp").permitAll()
-                                .requestMatchers(HttpMethod.GET, "/**").hasRole("USER")
-                                .requestMatchers(HttpMethod.POST, "/**").hasAnyRole("ADMIN")
-                )
+                        .requestMatchers("/", "/WEB-INF/views/index.jsp", "/login", "/logout", "/accessDenied",
+                                "/WEB-INF/views/login.jsp")
+                        .permitAll()
+                        .requestMatchers(HttpMethod.GET, "/**").hasRole("USER")
+                        .requestMatchers(HttpMethod.POST, "/**").hasAnyRole("ADMIN"))
                 .logout(logout -> logout
-                                .logoutUrl("/logout")
-                                .logoutSuccessUrl("/login?logout")
-                                .permitAll()
-                )
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login?logout")
+                        .permitAll())
                 .exceptionHandling(handling -> handling.accessDeniedPage("/accessDenied"));
 
         return http.build();

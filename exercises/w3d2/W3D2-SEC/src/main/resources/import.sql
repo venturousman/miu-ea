@@ -1,0 +1,3 @@
+INSERT INTO Book VALUES('Clean Code: A Handbook of Agile Software Craftsmanship', '978-0132350884', 'Robert C. Martin', 35.0);
+INSERT INTO Book VALUES('The Pragmatic Programmer: Your Journey to Mastery', '978-0135957059', 'Andrew Hunt and David Thomas', 40.25);
+INSERT INTO Book VALUES('Design Patterns: Elements of Reusable Object-Oriented Software', '978-0201633610', 'Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides', 50.75);
