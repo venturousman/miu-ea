@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <!DOCTYPE html>
 <html>
@@ -15,6 +16,7 @@
 	<c:if test="${msg == 'Add'}">
 		<form action="../books" method="post">
 	</c:if>
+	<sec:csrfInput />  <!-- This tag will insert a hidden CSRF token input -->
 	<table>
 		<tr>
 			<td>Title:</td>
@@ -37,6 +39,7 @@
 	</form>
 	<c:if test="${msg == 'Update'}">
 		<form action="delete?bookId=${book.id}" method="post">
+			<sec:csrfInput />  <!-- This tag will insert a hidden CSRF token input -->
 			<button type="submit">Delete</button>
 		</form>
 	</c:if>
