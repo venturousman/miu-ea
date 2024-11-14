@@ -1,0 +1,12 @@
+### GET request to example server
+POST http://localhost:8080/adsweb/api/v1/login
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "password"
+}
+
+###
+GET http://localhost:8080/adsweb/api/v1/patients
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyMSIsInJvbGVzIjpbIkRFTlRJU1QiXSwiaWF0IjoxNzMxNTM3NTIzLCJleHAiOjE3MzE2MjM5MjN9.CgKGl65Vj9unPyHSAcqZBMMAtlRHEASEWWp6URwXIIo
