@@ -15,7 +15,7 @@ import java.util.Map;
 @RestControllerAdvice
 public class UserAuthExceptionHandler {
 
-    @ExceptionHandler({BadCredentialsException.class, SignatureException.class, JwtException.class})
+    @ExceptionHandler({ BadCredentialsException.class, SignatureException.class, JwtException.class })
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     public Map<String, String> handleFailedAuth(Exception exception) {
         var errorMsgMap = new HashMap<String, String>();

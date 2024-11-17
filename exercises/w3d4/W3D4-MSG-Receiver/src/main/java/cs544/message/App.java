@@ -15,6 +15,11 @@ public class App {
 		return new Queue("hello");
 	}
 
+	// @Bean
+	// public Queue book() {
+	// return new Queue("book");
+	// }
+
 	// without this config you get security errors when receiving messages
 	@Bean
 	public SimpleMessageConverter converter() {

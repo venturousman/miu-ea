@@ -13,6 +13,11 @@ public class App {
 		return new Queue("hello");
 	}
 
+	@Bean
+	public Queue book() {
+		return new Queue("book");
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);
 	}

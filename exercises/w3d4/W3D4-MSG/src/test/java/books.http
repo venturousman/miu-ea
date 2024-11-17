@@ -1,0 +1,30 @@
+### GET request to example server
+GET http://localhost:8080/books
+
+###
+GET http://localhost:8080/books/1
+
+###
+POST http://localhost:8080/books
+Content-Type: application/json
+
+{
+  "title": "Beginning Java 8 Fundamentals",
+  "author": "Kishori Sharan",
+  "isbn": "978-0-306-40615-7",
+  "price": 49
+}
+
+### update
+PUT http://localhost:8080/books/4
+Content-Type: application/json
+
+{
+  "title": "Beginning Java 8 Fundamentals (updated)",
+  "author": "Kishori Sharan (updated)",
+  "isbn": "978-0-306-40615-7",
+  "price": 38
+}
+
+###
+DELETE http://localhost:8080/books/1

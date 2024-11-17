@@ -7,9 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 @RabbitListener(queues = "hello")
 public class Receiver {
-	
+
 	@RabbitHandler
 	public void receive(Person msg) {
 		System.out.println("Received: " + msg.getName());
 	}
+
+	// @RabbitHandler
+	// public void receive(Book msg) {
+	// System.out.println("Received: " + msg.toString());
+	// }
 }

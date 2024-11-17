@@ -17,8 +17,7 @@ public class WebAPIExceptionHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public Map<String, String> handleValidationExceptions(
-            MethodArgumentNotValidException ex) {
+    public Map<String, String> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
         ex.getBindingResult().getAllErrors().forEach((error) -> {
             String fieldName = ((FieldError) error).getField();
@@ -29,12 +28,11 @@ public class WebAPIExceptionHandler {
     }
 
     @ExceptionHandler(EntityNotFoundException.class)
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR) 
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public Map<String, String> handlePublisherNotFoundException(EntityNotFoundException EntityNotFoundException) {
-        Map<String , String> errorMessageMap = new HashMap<>();
+        Map<String, String> errorMessageMap = new HashMap<>();
         errorMessageMap.put("errorMessage", EntityNotFoundException.getMessage());
         return errorMessageMap;
     }
-
 
 }
